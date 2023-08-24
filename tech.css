@@ -1,0 +1,533 @@
+body, html {
+    height: 100%;
+    scroll-behavior: smooth;
+    /* background: #026440; */
+    /* background: #024b30; */
+    /* background: #01322c; */
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(185, 185, 185);
+  width: 8px;
+}
+
+/* general styling */
+#applyBtn a {
+    text-decoration: none;
+    color: #026440;
+}
+
+/* navbar styling */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5em;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: .8s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.hamburger {
+    display: none;
+}
+.logo a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.close {
+    display: none;
+}
+.navLinksContainer {
+    transform: translateX(0px);
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+#shown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    transform: translateX(0px);
+    transition: transform .8s;
+}
+.navLink {
+    text-decoration: none;
+    margin: 0 1.5em;
+    padding: .3em 2px;
+    position: relative;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.navLink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navLink:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+    background: #026440;
+}
+.navLink:hover {
+    color: #026440;
+}
+.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: #026440;
+    border-radius: 5px;
+
+}
+.active {
+    transition: .5s;
+    color: #026440;
+}
+
+/* sections styling */
+section {
+    min-height: 100vh;
+    padding: 1em;
+}
+
+/* home section styling */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.heading {
+    font-size: 5em;
+    font-weight: 700;
+}
+.topHead {
+    color: #026440;
+}
+.homeDescription {
+    margin: 1em 0;
+}
+.homeDescription p {
+    font-size: 1.2em;
+}
+#applyBtn {
+    border: 2px solid #026440;
+    padding: .5em 1em;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    background: transparent;
+    color: #026440;
+    transition: .4s;
+}
+#applyBtn:hover {
+    background: #026440;
+    cursor: pointer;
+}
+#applyBtn:hover a {
+    color: white;
+}
+
+/* about section styling */
+#about {
+    background: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.aboutDescription p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* courses section styling */
+#courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coursesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+.courses {
+    margin: 4em 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.courseHead p {
+    font-size: 1.2em;
+    text-align: center;
+}
+.course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    margin: 0 1em;
+    height: 8em;
+    width: 8em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: .5s;
+}
+.course:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+    background: #fff;
+}
+.course svg {
+    font-size: 3em;
+}
+
+/* apply section styling */
+#apply {
+    background: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.applyWrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.applyDescription {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 1.2em;
+}
+
+/* alumni section styling */
+#alumni {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alumniWrapper {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.alumniDescription {
+    font-size: 1.2em;
+    margin: 2em 0 1em 0;
+}
+.alumnisContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.alumni {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    padding: 1em;
+    border-radius: 20px;
+    min-width: 235px;
+}
+.name {
+    display: flex;
+    width: fit-content;
+    padding: 0 1em;
+}
+.name p {
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 80%;
+}
+.first {
+    color: #026440;
+    margin: 0 .5em 0 0;
+}
+.contact {
+    display: flex;
+    align-items: center;
+}
+.icon-contact a {
+    height: 2em;
+    width: 2em;
+    padding: .3em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .5em 0;
+}
+.icon-contact a:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* syllabus section styling */
+#syllabus {
+    background: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.syllabusWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+.syllabusWrapper p {
+    font-size: 1.2em;
+    text-align: center;
+}
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0 0 0;
+}
+.linkContainer a {
+    color: #026440;
+    text-decoration: none;
+}
+.linkContainer a:hover {
+    text-decoration: underline;
+}
+
+/* responsiveness */
+@media screen and (max-width: 1025px) {
+
+    /* home section styling */
+    .homeWrapper {
+        width: 75%;
+    }
+
+    /* about section styling */
+    .aboutWrapper {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 950px) {
+    /* navbar styling */
+    nav {
+        justify-content: center;
+        padding: 1em;
+    }
+    .logo a {
+        font-size: 1em;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: auto;
+        left: 1em;
+    }
+    .navLinksContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(15px);
+        background: rgba(0, 0, 0, 0.08);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        justify-content: center;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        transform: translateX(-1000px);
+        transition: transform .8s;
+    }
+    .close {
+        display: flex;
+        justify-content: right;
+        padding: 0 1em 0 0;
+        width: 100%;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+    .close p {
+        width: fit-content;
+        rotate: 45deg;
+        font-size: 2.5em;
+    }
+    .navLink {
+        margin: 1em 0;
+    }
+    
+}
+@media screen and (max-width: 770px) {
+    /* home section styling */
+    .heading {
+        font-size: 4em;
+    }
+    .homeWrapper {
+        padding: 1em;
+        width: 90%;
+    }
+
+    /* about section styling */
+    .aboutWrapper {
+        width: 90%;
+        padding: 0 1em;
+    }
+
+    /* course section styling */
+    .coursesWrapper {
+        width: 90%;
+        padding: 0 1em;
+    }
+    .courses {
+        flex-wrap: wrap;
+        margin: 1em 0 0 0;
+    }
+    .course {
+        margin: 1em;
+    }
+
+    /* apply section styling */
+    .applyWrapper {
+        padding: 1em;
+        width: 75%;
+    }
+
+    /* syllabus section styling */
+}
+@media screen and (max-width: 555px) {
+    /* sections styling */
+    .description p, #applyBtn, .syllabusWrapper p {
+        font-size: 1em;
+    }
+
+    /* home section styling */
+    .heading {
+        font-size: 3em;
+    }   
+
+    /* apply section styling */
+    .applyWrapper {
+        width: 85%;
+    }
+    .applyDescription p, .alumniDescription p {
+        font-size: .8em;
+    }
+}
+@media screen and (max-width: 445px) {
+    /* home section styling */
+    .heading {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 425px) {
+    /* home section styling */
+    .heading {
+        font-size: 2em;
+    }
+    .homeWrapper {
+        width: 100%;
+        padding: .8em;
+    }
+
+    /* about section styling */
+    .aboutWrapper {
+        width: 100%;
+    }
+
+    /* course section styling */
+    .coursesWrapper {
+        width: 100%;
+    }
+
+    /* apply section styling */
+    .applyWrapper {
+        width: 100%;
+        padding: .8em;
+    }
+}
+@media screen and (max-width: 380px) {
+    /* navbar styling */
+    nav {
+        justify-content: right;
+    }
+
+    /* home section styling */
+    .homeWrapper {
+        padding: .5em;
+    }
+
+    /* courses section styling */
+    .coursesWrapper {
+        padding: 2em 0 0 0;
+    }
+    
+    /* apply section styling */
+    .applyWrapper {
+        padding: .5em;
+    }
+}
