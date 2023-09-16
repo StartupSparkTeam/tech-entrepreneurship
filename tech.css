@@ -12,6 +12,10 @@ body, html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
 }
+::selection {
+    background: rgb(0, 110, 110);
+    color: white;
+}
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -56,6 +60,11 @@ nav {
     color: #000;
     font-size: 1.2em;
     font-weight: 600;
+    display: flex;
+}
+.tech {
+    margin: 0 .4em 0 0;
+    color: #026440;
 }
 .close {
     display: none;
@@ -322,6 +331,11 @@ section {
 }
 .icon-contact a:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: pink;
+}
+.alumniHolder p {
+    font-size: .6em;
+    color: #026440;
 }
 
 /* syllabus section styling */
